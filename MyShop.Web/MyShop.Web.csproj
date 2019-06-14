@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -192,6 +198,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyShop.Common\MyShop.Common.csproj">
+      <Project>{2e367215-1a2c-4b5c-b33f-869d206a4ec4}</Project>
+      <Name>MyShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyShop.Data\MyShop.Data.csproj">
+      <Project>{3454746c-3ac0-4c35-b302-1483b9acdfd0}</Project>
+      <Name>MyShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyShop.Model\MyShop.Model.csproj">
+      <Project>{1074d192-81ea-4f7e-be25-813c13eb0aff}</Project>
+      <Name>MyShop.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyShop.Service\MyShop.Service.csproj">
+      <Project>{9c51f56c-e3e0-4557-b38f-1f79e1c95f26}</Project>
+      <Name>MyShop.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
