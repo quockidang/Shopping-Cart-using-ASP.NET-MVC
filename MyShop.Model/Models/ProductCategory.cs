@@ -1,11 +1,7 @@
 ﻿using MyShop.Model.Abstract;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyShop.Model.Models
 {
@@ -21,6 +17,7 @@ namespace MyShop.Model.Models
 
         [Required]
         public string Alias { set; get; }
+
         public string Description { set; get; }
         public int? ParentID { set; get; }
         public int? DisplayOrder { set; get; }
@@ -28,6 +25,5 @@ namespace MyShop.Model.Models
         public int? HomeFlag { set; get; }
 
         public virtual IEnumerable<Product> Products { set; get; }
-
     }
 }

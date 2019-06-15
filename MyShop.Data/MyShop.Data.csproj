@@ -48,7 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructer\DbFactory.cs" />
+    <Compile Include="Infrastructer\Disposable.cs" />
+    <Compile Include="Infrastructer\IDbFactory.cs" />
+    <Compile Include="Infrastructer\IRepository.cs" />
+    <Compile Include="Infrastructer\IUnitOfWork.cs" />
+    <Compile Include="Infrastructer\RepositoryBase.cs" />
+    <Compile Include="Infrastructer\UnitOfWork.cs" />
+    <Compile Include="Migrations\201906150812540_initialDB.cs" />
+    <Compile Include="Migrations\201906150812540_initialDB.Designer.cs">
+      <DependentUpon>201906150812540_initialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyShopDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ProductCategoryRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,6 +74,15 @@
       <Project>{2e367215-1a2c-4b5c-b33f-869d206a4ec4}</Project>
       <Name>MyShop.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyShop.Model\MyShop.Model.csproj">
+      <Project>{1074d192-81ea-4f7e-be25-813c13eb0aff}</Project>
+      <Name>MyShop.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906150812540_initialDB.resx">
+      <DependentUpon>201906150812540_initialDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
