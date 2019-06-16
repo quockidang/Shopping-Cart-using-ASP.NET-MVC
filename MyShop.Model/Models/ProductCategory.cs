@@ -22,7 +22,7 @@ namespace MyShop.Model.Models
         public int? ParentID { set; get; }
         public int? DisplayOrder { set; get; }
         public string Image { set; get; }
-        public int? HomeFlag { set; get; }
+        public bool? HomeFlag { set; get; }
 
         public virtual IEnumerable<Product> Products { set; get; }
     }

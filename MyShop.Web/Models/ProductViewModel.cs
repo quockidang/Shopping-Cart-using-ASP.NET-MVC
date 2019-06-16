@@ -1,37 +1,34 @@
-﻿using MyShop.Model.Abstract;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace MyShop.Model.Models
+namespace MyShop.Web.Models
 {
-    [Table("Products")]
-    public class Product : Auditable
+    public class ProductViewModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int ID { set; get; }
 
-        [Required]
-        [MaxLength(256)]
+       
         public string Name { set; get; }
 
-        [Required]
-        [MaxLength(256)]
+        
         public string Alias { set; get; }
 
         public int CategoryID { set; get; }
 
-        [MaxLength(500)]
+      
         public string Image { set; get; }
 
-        [Column(TypeName = "xml")]
+        
         public string MoreImages { set; get; }
 
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }
         public int Warranty { set; get; }
 
-        [MaxLength(500)]
+        
         public string Description { set; get; }
 
         public string Content { set; get; }
@@ -46,7 +43,26 @@ namespace MyShop.Model.Models
 
         public decimal OriginalPrice { set; get; }
 
-        [ForeignKey("CategoryID")]
-        public virtual ProductCategory ProductCategory { set; get; }
+        public virtual ProductCategoryViewModel ProductCategoryViewModel { set; get; }
+
+        public DateTime? CreatedDate { set; get; }
+
+
+        public string CreatedBy { set; get; }
+
+        public DateTime? UpdatedDate { set; get; }
+
+
+        public string UpdatedBy { set; get; }
+
+
+        public string MetaKeyword { set; get; }
+
+
+        public string MetaDescription { set; get; }
+
+        public bool Status { set; get; }
+
+
     }
 }
